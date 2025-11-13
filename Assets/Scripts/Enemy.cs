@@ -38,10 +38,10 @@ public class Enemy : MonoBehaviour
             if (playerRb.linearVelocity.y < 0)
             {
                 // Bounce the player up a little
-                playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, 8f);
+                //playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, 8f);
 
                 // Destroy this enemy
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
             else
             {
