@@ -35,13 +35,14 @@ public class Enemy : MonoBehaviour
             Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
 
             // Check if the player is falling down when colliding
-            if (playerRb.linearVelocity.y < 0)
+            if (playerRb.linearVelocity.y < 0 && collision.transform.position.y > transform.position.y + 0.2f)
             {
                 // Bounce the player up a little
-                //playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, 8f);
+                playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, 8f);
 
                 // Destroy this enemy
-                //Destroy(gameObject);
+                ScoreManager.instance.AddScore(1);
+                Destroy(gameObject);
             }
             else
             {
